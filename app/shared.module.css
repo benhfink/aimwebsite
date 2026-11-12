@@ -48,4 +48,4 @@
 }
 
 .photo { position: relative; margin: 0; }
-.photo img { object-fit: cover; filter: grayscale(1); }
+.photo img { object-fit: cover; }

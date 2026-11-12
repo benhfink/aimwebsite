@@ -29,15 +29,15 @@ const values = [
 const voices = [
   {
     t: "The first time our autonomous ran clean at a qualifier, nobody on our side said a word for about five seconds. Then all of us were yelling. I've been chasing that feeling every season since.",
-    who: "Ben Fink",
+    who: "Julian · Programming",
   },
   {
     t: "I joined to help with wiring. Two seasons later I'm the one people come find when the drivetrain is acting up, and I'm still not totally sure how that happened.",
-    who: "Noah Lodish",
+    who: "Daniel · Mechanics",
   },
   {
     t: "A rival team lent us a servo twenty minutes before eliminations. We beat them in the semis with it. They were the first ones over to congratulate us.",
-    who: "Grant Easton",
+    who: "Gideon · Game Strategy",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function FirstPage() {
               mentors.
             </p>
           </div>
-          {/* PHOTO PLACEHOLDER: swap for a competition-day photo (next/image inside a blueprint duotone figure) */}
+          {/* PHOTO PLACEHOLDER: swap for a competition-day photo (next/image inside a blueprint figure) */}
           <Placeholder label="Competition-day photo" />
         </section>
 

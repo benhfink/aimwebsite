@@ -9,27 +9,20 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Sponsors" };
 
-const sponsors = [
+// `logo` is optional: sponsors without a logo file yet show their name as a wordmark.
+const sponsors: { name: string; kind: string; logo?: string; url: string; b: string }[] = [
+  {
+    name: "Robinhood",
+    kind: "Sponsor",
+    url: "https://robinhood.com/",
+    b: "Robinhood is a financial services company that makes investing and other financial tools accessible to everyone.",
+  },
   {
     name: "The Gaga Center",
     kind: "Practice space",
     logo: "/images/sponsors/gaga-center.png",
     url: "https://www.gagacenter.com/nyc/",
     b: "The Gaga Center, on the Upper East Side of New York City, lets AIM Robotics use its space for practices. It's a place for people of all ages to play Gaga and have fun!",
-  },
-  {
-    name: "Euro Trend",
-    kind: "Sponsor",
-    logo: "/images/sponsors/euro-trend.png",
-    url: "https://www.eurotrendusa.com/",
-    b: "Founded in 2003, Eurotrend pairs European design with local customization, making high-end furniture for contract, hospitality and residential projects with well-known designers and manufacturers.",
-  },
-  {
-    name: "Unqork",
-    kind: "Sponsor",
-    logo: "/images/sponsors/unqork.png",
-    url: "https://www.unqork.com/about-unqork/",
-    b: "Unqork is a no-code platform that lets companies build enterprise software without writing code.",
   },
   {
     name: "Sixfold",
@@ -39,11 +32,10 @@ const sponsors = [
     b: "Sixfold is a New York company that builds AI tools made specifically for insurance underwriters.",
   },
   {
-    name: "J.Crew",
+    name: "Private Prep",
     kind: "Sponsor",
-    logo: "/images/sponsors/jcrew.png",
-    url: "https://www.jcrew.com/",
-    b: "J.Crew makes classic American clothing with a modern twist. J.Crew AIMs to help everyone confidently express themselves through their style.",
+    url: "https://privateprep.com/",
+    b: "Private Prep is an education company offering personalized tutoring, test prep and college counseling.",
   },
 ];
 
@@ -79,9 +71,13 @@ export default function SponsorsPage() {
             <Reveal key={sp.name} className={styles.sponsor}>
               <div className={`blueprint ${styles.logoFrame}`}>
                 <Corners />
-                <div className={styles.logo}>
-                  <Image src={sp.logo} alt={sp.name} fill sizes="(max-width: 700px) 90vw, 560px" />
-                </div>
+                {sp.logo ? (
+                  <div className={styles.logo}>
+                    <Image src={sp.logo} alt={sp.name} fill sizes="(max-width: 700px) 90vw, 560px" />
+                  </div>
+                ) : (
+                  <div className={styles.wordmark}>{sp.name}</div>
+                )}
               </div>
               <div className={s.stack} style={{ gap: 14 }}>
                 <span className={s.label}>

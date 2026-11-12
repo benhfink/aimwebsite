@@ -13,13 +13,9 @@ export const metadata: Metadata = { title: "About" };
 const photos = ["/images/gallery/team-1.jpg", "/images/gallery/team-2.jpg", "/images/gallery/team-3.jpg"];
 
 const departments = [
-  ["Mechanics", "Drivetrains, mechanisms and the build itself, from first prototype to competition robot."],
+  ["Mechanics", "Drivetrains, mechanisms and the build itself, from CAD in Onshape and first prototype to competition robot."],
   ["Programming", "Teleop control, autonomous routines and sensors, written in Java."],
-  ["Design", "CAD in Onshape, industrial design and the team brand."],
-  ["Outreach", "Workshops, mentoring and SCAN, our Student Clean Air Network."],
-  ["Finances", "Budget, fundraising and sponsor relationships."],
-  ["Management", "Schedules, operations and keeping a student-led team on target."],
-  ["Safety & Sustainability", "Safe shop practice and responsible use of materials."],
+  ["Operations", "Outreach, SCAN, finances, sponsors, communications and the schedules that keep a student-led team on target."],
 ];
 
 const timeline = [
@@ -78,7 +74,7 @@ export default function AboutPage() {
         <section className={styles.photos}>
           {photos.map((src, i) => (
             <Reveal key={src} delay={i * 100}>
-              <figure className={`blueprint duotone ${s.photo}`} style={{ aspectRatio: "4 / 3" }}>
+              <figure className={`blueprint ${s.photo}`} style={{ aspectRatio: "4 / 3" }}>
                 <Image src={src} alt="AIM Robotics team" fill sizes="(max-width: 700px) 100vw, 400px" />
                 <Corners />
               </figure>
@@ -143,7 +139,7 @@ export default function AboutPage() {
           <div className={styles.people}>
             {team.map(([name, role, file], i) => (
               <Reveal key={name} delay={(i % 5) * 60} className={styles.person}>
-                <figure className={`blueprint duotone ${s.photo}`} style={{ aspectRatio: "4 / 5" }}>
+                <figure className={`blueprint ${s.photo}`} style={{ aspectRatio: "4 / 5" }}>
                   <Image
                     src={`/images/team/${file}.jpg`}
                     alt={name}

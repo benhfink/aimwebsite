@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = { title: "Donate" };
 
 const DONATION_FORM =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdSUnl7PMwEqBzaAMxiCYDSU2jcjGpgXxzykQU42HEbzx3OTg/viewform?usp=sf_link";
+  "https://host.nxt.blackbaud.com/donor-form/?svcid=renxt&formId=be0b6e11-a798-4e7d-b98f-e514d350b361&envid=p--oy21XmkKEaETrF-kHL-gw&zone=usa";
 
 const uses = [
   { t: "Robot parts", b: "Motors, servos, sensors, aluminum and filament for this season’s Griffy." },

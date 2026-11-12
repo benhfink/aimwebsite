@@ -22,12 +22,12 @@ const ticker = [
 
 // Logos are shown in one ink color (see .sponsorLogo); h is the display height in px,
 // tuned per logo so wide wordmarks and square badges read at a similar size.
-const sponsors = [
+// Sponsors without a logo file yet (no `src`) show their name as a text wordmark.
+const sponsors: { name: string; src?: string; w?: number; h?: number; height?: number }[] = [
+  { name: "Robinhood" },
   { name: "The Gaga Center", src: "/images/sponsors/logos/gaga-center.svg", w: 220, h: 220, height: 72 },
-  { name: "Euro Trend", src: "/images/sponsors/logos/euro-trend.webp", w: 400, h: 51, height: 26 },
-  { name: "Unqork", src: "/images/sponsors/logos/unqork.png", w: 297, h: 80, height: 40 },
   { name: "Sixfold", src: "/images/sponsors/logos/sixfold.svg", w: 164, h: 38, height: 38 },
-  { name: "J.Crew", src: "/images/sponsors/logos/jcrew.svg", w: 1183, h: 593, height: 56 },
+  { name: "Private Prep" },
 ];
 
 // `count` animates the number up on first view. The founding year stays static.
@@ -175,7 +175,7 @@ export default function Home() {
 
         <section className={styles.griffy}>
           <Reveal>
-            <figure className={`blueprint duotone ${styles.griffyPhoto}`}>
+            <figure className={`blueprint ${styles.griffyPhoto}`}>
               <Image
                 src="/images/team-competition.jpg"
                 alt="AIM Robotics at competition"
@@ -288,15 +288,19 @@ export default function Home() {
           <Marquee speed={50} className={styles.sponsorMarquee}>
             {sponsors.map((s) => (
               <span key={s.name} className={styles.sponsor}>
-                <Image
-                  src={s.src}
-                  alt={s.name}
-                  width={s.w}
-                  height={s.h}
-                  unoptimized
-                  className={styles.sponsorLogo}
-                  style={{ height: s.height, width: "auto" }}
-                />
+                {s.src ? (
+                  <Image
+                    src={s.src}
+                    alt={s.name}
+                    width={s.w}
+                    height={s.h}
+                    unoptimized
+                    className={styles.sponsorLogo}
+                    style={{ height: s.height, width: "auto" }}
+                  />
+                ) : (
+                  <span className={styles.sponsorWordmark}>{s.name}</span>
+                )}
               </span>
             ))}
           </Marquee>

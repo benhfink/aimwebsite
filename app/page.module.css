@@ -134,7 +134,7 @@
   gap: clamp(40px, 6vw, 96px); align-items: center;
 }
 .griffyPhoto { margin: 0; aspect-ratio: 4 / 3; }
-.griffyPhoto img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+.griffyPhoto img { width: 100%; height: 100%; object-fit: cover; }
 .griffyCopy { display: flex; flex-direction: column; gap: 20px; }
 .griffyCopy .body { max-width: 48ch; }
 .specs {
@@ -205,5 +205,9 @@
   height: clamp(104px, 9vw, 128px); padding: 0 clamp(36px, 4vw, 56px);
   border-right: 1px solid var(--color-divider);
 }
-/* One ink color so the five brands sit together (two of the source files are white-on-transparent) */
+/* One ink color so the brands sit together (some source files are white-on-transparent) */
 .sponsorLogo { display: block; max-width: none; filter: brightness(0); opacity: 0.85; }
+.sponsorWordmark {
+  font-family: var(--font-heading); font-weight: 600; font-size: 30px; text-transform: uppercase;
+  white-space: nowrap; color: #000; opacity: 0.85;
+}
