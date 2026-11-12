@@ -20,6 +20,11 @@ const ticker = [
   "Bronx, New York",
 ];
 
+// Robot CAD viewer in the hero is hidden until we have the robot's CAD file.
+// To bring it back: export the Onshape assembly as GLB to public/models/robot.glb,
+// set this to true, and follow the note above <CadViewer> in the hero.
+const SHOW_ROBOT_CAD = false;
+
 // Logos are shown in one ink color (see .sponsorLogo); h is the display height in px,
 // tuned per logo so wide wordmarks and square badges read at a similar size.
 // Sponsors without a logo file yet (no `src`) show their name as a text wordmark.
@@ -112,6 +117,7 @@ export default function Home() {
             </Reveal>
           </div>
 
+          {SHOW_ROBOT_CAD && (
           <div className={styles.viewerWrap}>
             {/*
               ROBOT CAD PLACEHOLDER
@@ -137,6 +143,7 @@ export default function Home() {
               <span className={`${styles.viewerLabel} ${styles.labelBr}`}>Drag to orbit</span>
             </div>
           </div>
+          )}
         </div>
 
         <div className={styles.tickerBar}>
